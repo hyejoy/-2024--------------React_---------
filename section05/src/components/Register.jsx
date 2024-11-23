@@ -19,7 +19,7 @@ const Register = () => {
   });
 
   const countRef = useRef(0);
-  console.log("Register 랜더링");
+  const inputRef = useRef();
 
   // 비슷하게 생긴 이벤트 핸들러들을 통합 이벤트 핸들러로 묶을 수 있다.
   const onChange = (e) => {
@@ -34,10 +34,19 @@ const Register = () => {
     });
   };
 
+  const onSubmit = () => {
+    if (input.name === "") {
+      console.log(inputRef.current); // input dom 요소 출력됨
+      //<input name="name" type="text" placeholder="이름" value="">
+      inputRef.current.focus();
+    }
+  };
+
   return (
     <>
       <div>
         <input
+          ref={inputRef}
           name="name"
           value={input.name}
           onChange={onChange}
@@ -61,6 +70,8 @@ const Register = () => {
         {input.bio}
         <textarea onChange={onChange} name="bio" id=""></textarea>
       </div>
+
+      <button onClick={onSubmit}>제출</button>
     </>
   );
 };
