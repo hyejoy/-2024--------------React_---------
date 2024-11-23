@@ -8,6 +8,15 @@ import { useState, useRef } from "react";
  * 4. 자기소개
  */
 
+/**
+ * 의문 :useRef를 사용하지 않고 전역변수를 사용하는건 별론가?
+ *  > App.jsx에서 Register.jsx를 두번 호출하게 되면 치명적인 단점이 된다.
+ *  Register 함수를 두번호출하게되는것일뿐 전역변수는 공유하고 있는 상태가 돼서,
+ *  의도한바로 작동하지 않을 수도 있다.
+ */
+
+let count = 0;
+
 const Register = () => {
   // 여러개 비슷한 state가 있을때는 하나의 객체로 묶어 하나의 state로
   // 통합관리 하면 편하다.
@@ -18,13 +27,15 @@ const Register = () => {
     bio: "",
   });
 
-  const countRef = useRef(0);
+  //   const countRef = useRef(0);
   const inputRef = useRef();
 
   // 비슷하게 생긴 이벤트 핸들러들을 통합 이벤트 핸들러로 묶을 수 있다.
   const onChange = (e) => {
-    countRef.current++;
-    console.log(countRef.current);
+    // countRef.current++;
+    // console.log(countRef.current);
+    count++;
+    console.log(count);
     console.log(e.target.name, e.target.value);
     setInput({
       ...input,
