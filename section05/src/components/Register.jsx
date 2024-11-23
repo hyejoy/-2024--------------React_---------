@@ -18,11 +18,13 @@ const Register = () => {
     bio: "",
   });
 
-  const refObj = useRef(0);
+  const countRef = useRef(0);
   console.log("Register 랜더링");
 
   // 비슷하게 생긴 이벤트 핸들러들을 통합 이벤트 핸들러로 묶을 수 있다.
   const onChange = (e) => {
+    countRef.current++;
+    console.log(countRef.current);
     console.log(e.target.name, e.target.value);
     setInput({
       ...input,
@@ -34,14 +36,6 @@ const Register = () => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          refObj.current++;
-          console.log(refObj.current);
-        }}
-      >
-        ref값 출력
-      </button>
       <div>
         <input
           name="name"
