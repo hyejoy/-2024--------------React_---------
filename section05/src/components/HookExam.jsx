@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useEffect } from "react";
+import useInput from "../hooks/useInput";
 // 3가지 hook 관련 팁
 /**
  * 1. 함수 컴포넌트, 커스텀 훅 내부에서만 호출 가능
@@ -8,15 +8,17 @@ import { useState } from "react";
  *  */
 
 const HookExam = () => {
-  const [input, setInput] = useState("");
+  const [input, onChange] = useInput();
+  const [input2, onChange2] = useInput();
 
-  const onChagne = (e) => {
-    setInput(e.targert.value);
-  };
+  useEffect(() => {
+    console.log(input);
+  }, [input]);
 
   return (
     <div>
-      <input type="text" value={input} onChange={onChagne} />
+      <input type="text" value={input} onChange={onChange} />
+      <input type="text" value={input2} onChange={onChange2} />
     </div>
   );
 };
