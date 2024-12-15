@@ -1,41 +1,49 @@
 import "./App.css";
 import Viwer from "./components/Viewr";
 import Controller from "./components/Controller";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Even from "./components/Even";
 
 function App() {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState("");
 
+  const isMount = useRef(false);
+  /** ✔ 1. 마운트 : 탄생
+   * useEffect는 deps의 값이 변경되어야만 실행되기때문에
+   * 결국 콜백함수는 컴포넌트가 mount된 이후에는 다시는 실행되지않음
+   */
+  useEffect(() => {
+    console.log("mount");
+  }, []);
+
+  /** ✔ 2. 업데이트 : 변화, 리렌더링
+   * mount 시점 및, 리렌더링시 실행된다
+   */
+
+  /**
+   * 컴포넌트의 udpate 시점에서만 코드를 실행시키고싶다면,(mount에는 실행X)
+   * 다음예시와 같이 작성한다
+   * App 컴포넌트가 최초로 mount될 때 실행되는데, 조건문이 실행되고 return됨
+   * 두번째 리랜더링시에는 이미 ref가 true이므로 콘솔이 찍히기 시작함
+   */
+
+  useEffect(() => {
+    if (!isMount.current) {
+      isMount.current = true;
+      return;
+    }
+    console.log("update");
+  });
+
+  /**
+   * ✔ 3. 언마운트 : 죽음
+   */
+
   const onClickButton = (value) => {
     value = Number(value);
     setCount(count + value);
   };
-
-  /**
-   * 배열의값이 바뀌게되면, 첫번째 인수로 전달한 콜백함수를 실행시켜줌
-   * 여기서 count, input는 의존성 배열로 [dependency array, deps]
-   * 둘중 하나의 값이 바뀌면 useEffect가 실행된다.
-   */
-  useEffect(() => {
-    console.log(`count: ${count}`);
-    console.log(`input: ${input}`);
-  }, [count, input]);
-
-  /**
-   * 🤔useEffect 대신 이렇게 쓰면 값이 찍히지않아?
-   */
-  const eventFunction = (value) => {
-    setCount(value);
-    console.log(count); // 현재 count값이 찍히지않고, 전에 저장되었던 count값이 찍힘
-  };
-
-  /**
-   * react의 상태변화 함수는 비동기로 동작하기때문에 (함수의 완료가 뒤늦게 됨)
-   * 그래서 실제로는 console.log(count)를 호출할때 setCount가 호출된것이지, 완료된것은 아님
-   * 따라서 저장되기 이전의 값이 출력되고 있는것
-   * 변경된 state값을 이용하여 사이드이팩트에 해당되는 부가적인 작업을 진행하려면 useEffect를 사용해야한다.
-   */
 
   return (
     <div className="App">
@@ -50,6 +58,7 @@ function App() {
       </section>
       <section>
         <Viwer count={count} />
+        {count % 2 === 0 ? <Even /> : null}
       </section>
       <section>
         <Controller onClickButton={onClickButton} />
