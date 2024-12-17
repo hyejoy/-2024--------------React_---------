@@ -1,0 +1,8 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /*요소들간의 간격 _ flex인경우에만 사용 가능*/
+  background-color: beige;
+  width: 500px;
+  margin: 0 auto;
+}
