@@ -42,7 +42,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Editer onCreate={onCreate} />
-      <List />
+      <List todos={todos} />
     </div>
   );
 };
