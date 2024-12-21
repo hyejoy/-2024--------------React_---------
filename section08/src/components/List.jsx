@@ -25,10 +25,14 @@ const List = ({ todos }) => {
     });
   };
 
-  const correctAnswer = () => {
+  const correctAnswer_1 = () => {
     return todos.filter((todo) => {
-      return todo.content.includs(search); // {}를 사용하면 명시적으로 return 작성해야함
+      return todo.content.includes(search); // {}를 사용하면 명시적으로 return 작성해야함
     });
+  };
+
+  const correctAnswer_2 = () => {
+    return todos.filter((todo) => todo.content.includes(search)); // 중괄호 사용하지않으면 return 적지않아도됨
   };
 
   const getFilteredData = () => {
