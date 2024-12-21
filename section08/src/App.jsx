@@ -58,7 +58,6 @@ const App = () => {
   };
 
   const refactoringOnUpdate = (targetId) => {
-    console.log(targetId);
     setTodos(
       todos.map((todo) =>
         todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
