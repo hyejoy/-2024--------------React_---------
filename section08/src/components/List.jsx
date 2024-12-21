@@ -2,7 +2,7 @@ import "./List.css";
 import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
 
-const List = ({ todos }) => {
+const List = ({ todos, onUpdate }) => {
   const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -61,7 +61,7 @@ const List = ({ todos }) => {
         어떤요소들을 구분할 때 각각의 요소를 key라는 값을 통해 구분하게됨
          */}
         {filterdTodos.map((todo) => {
-          return <TodoItem key={todo.id} {...todo} />;
+          return <TodoItem key={todo.id} {...todo} onUpdate={onUpdate} />;
         })}
       </div>
     </div>
