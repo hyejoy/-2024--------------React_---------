@@ -65,11 +65,16 @@ const App = () => {
     );
   };
 
+  const onDelete = (targetId) => {
+    const result = todos.filter((todo) => todo.id !== targetId);
+    setTodos(result);
+  };
+
   return (
     <div className="App">
       <Header />
       <Editer onCreate={onCreate} />
-      <List todos={todos} onUpdate={refactoringOnUpdate} />
+      <List todos={todos} onUpdate={refactoringOnUpdate} onDelete={onDelete} />
     </div>
   );
 };
