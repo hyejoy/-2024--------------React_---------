@@ -1,0 +1,23 @@
+.List {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.List > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #efefef;
+  padding: 15px 0px;
+}
+
+.List > input:focus {
+  outline: none; /*input focus할때 border line off*/
+  border-bottom: 1px solid #2593ff;
+}
+
+.todos_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
