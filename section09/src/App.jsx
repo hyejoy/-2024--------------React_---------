@@ -25,7 +25,7 @@ const mockData = [
   },
 ];
 
-function reducer(state, action) {
+function hyejo(state, action) {
   switch (action.type) {
     case 'CREATE':
       return [action.data, ...state];
@@ -57,7 +57,7 @@ const App = () => {
    *  배열안에 객체안이 들어가는 복잡한 구조들은 보통 reducer를 사용하며 관리하는게 일반적이고
    *  간단한 상태만있다면 useState로 관리함
    */
-  const [todos, dispatch] = useReducer(reducer, mockData);
+  const [todos, dispatch] = useReducer(hyejo, mockData);
 
   const idRef = useRef(3);
 
