@@ -74,7 +74,6 @@ const App = () => {
   };
 
   const onUpdate = targetId => {
-    console.log(targetId);
     dispatch({
       type: 'UPDATE',
       targetId: targetId,
