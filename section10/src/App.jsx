@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useRef, useReducer} from 'react';
+import {useState, useRef, useReducer, useCallback} from 'react';
 import Header from './components/Header';
 import Editer from './components/Editer';
 import List from './components/List';
@@ -61,7 +61,7 @@ const App = () => {
 
   const idRef = useRef(3);
 
-  const onCreate = content => {
+  const onCreate = useCallback(content => {
     dispatch({
       type: 'CREATE',
       data: {
@@ -71,21 +71,24 @@ const App = () => {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
 
-  const onUpdate = targetId => {
+  const onUpdate = useCallback(targetId => {
     dispatch({
       type: 'UPDATE',
       targetId: targetId,
     });
-  };
+  }, []);
 
-  const onDelete = targetId => {
+  /** 콜백함수를 그대로 생성해서 반환해주고 deps가 변경될때만 다시 생성하도록
+   * 최적화를 진행 ==> 함수를 메모이제이션
+   */
+  const onDelete = useCallback(targetId => {
     dispatch({
       type: 'DELETE',
       targetId,
     });
-  };
+  }, []);
 
   return (
     <div className="App">
