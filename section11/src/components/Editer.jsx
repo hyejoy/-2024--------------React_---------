@@ -1,24 +1,35 @@
-import "./Editer.css";
-import { useState, useRef } from "react";
-const Editer = ({ onCreate }) => {
-  const [content, setContent] = useState("");
+import './Editer.css';
+import {useState, useRef, useContext} from 'react';
+import {TodoContext} from '../App';
+
+const Editer = () => {
+  /**
+   * useContext hook은 인수로 전달된 context로부터
+   * 공급된 데이터를 반환 해주는 함수이다.
+   */
+  const data = useContext(TodoContext);
+  console.log(data);
+
+  const [content, setContent] = useState('');
   const contentRef = useRef();
-  const onChangeContent = (e) => {
+
+  const onChangeContent = e => {
     setContent(e.target.value);
   };
+
   const onSubmit = () => {
-    if (content === "") {
+    if (content === '') {
       // 빈문자열이라면 focus 후 return
       contentRef.current.focus();
       return;
     }
-    onCreate(content);
+    data.onCreate(content);
     // 새로운 데이터 추가후 초기화
-    setContent("");
+    setContent('');
   };
 
   /**Enter 키 작동 */
-  const onKeyDown = (e) => {
+  const onKeyDown = e => {
     if (e.keyCode === 13) {
       onSubmit();
     }

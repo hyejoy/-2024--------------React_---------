@@ -1,8 +1,12 @@
 import './List.css';
-import {useEffect, useState, useMemo} from 'react';
+import {useEffect, useState, useMemo, useContext} from 'react';
 import TodoItem from './TodoItem';
+import {TodoContext} from '../App';
 
-const List = ({todos, onUpdate, onDelete}) => {
+const List = () => {
+  //  ⭐List는 todos만 사용하기때문에, 구조분해 할당 사용
+  const {todos} = useContext(TodoContext);
+
   const [search, setSearch] = useState('');
 
   const onChangeSearch = e => {
@@ -55,14 +59,7 @@ const List = ({todos, onUpdate, onDelete}) => {
       />
       <div className="todos_wrapper">
         {filterdTodos.map(todo => {
-          return (
-            <TodoItem
-              key={todo.id}
-              {...todo}
-              onUpdate={onUpdate}
-              onDelete={onDelete}
-            />
-          );
+          return <TodoItem key={todo.id} {...todo} />;
         })}
       </div>
     </div>

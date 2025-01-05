@@ -1,7 +1,15 @@
 import './TodoItem.css';
-import {memo} from 'react';
+import {memo, useCallback, useContext, useMemo} from 'react';
+import {TodoContext} from '../App';
+import dayjs from 'dayjs';
 
-const TodoItem = ({id, isDone, content, date, onUpdate, onDelete}) => {
+const TodoItem = ({id, isDone, content, date}) => {
+  const dayjsDate = useMemo(() => {
+    return dayjs(date).format('YY년MM월DD일');
+  }, [date]);
+
+  const {onUpdate, onDelete} = useContext(TodoContext);
+
   return (
     <div className="TodoItem">
       <input
@@ -12,7 +20,7 @@ const TodoItem = ({id, isDone, content, date, onUpdate, onDelete}) => {
         }}
       />
       <div className="content">{content}</div>
-      <div className="date">{new Date(date).toLocaleString()}</div>
+      <div className="date">{dayjsDate}</div>
       <button onClick={() => onDelete(id)}>삭제</button>
     </div>
   );

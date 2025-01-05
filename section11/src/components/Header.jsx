@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import './Header.css';
 import {memo} from 'react';
 
@@ -5,7 +6,7 @@ const Header = () => {
   return (
     <div className="Header">
       <h3> 오늘은 😎</h3>
-      <h1>{new Date().toDateString()}</h1>
+      <h1>{dayjs(new Date()).format('YYYY년MM월DD일')}</h1>
     </div>
   );
 };

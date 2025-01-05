@@ -1,9 +1,8 @@
 import './App.css';
-import {useState, useRef, useReducer, useCallback} from 'react';
+import {useState, useRef, useReducer, useCallback, createContext} from 'react';
 import Header from './components/Header';
 import Editer from './components/Editer';
 import List from './components/List';
-//commit test
 const mockData = [
   {
     id: 0,
@@ -25,7 +24,7 @@ const mockData = [
   },
 ];
 
-function hyejo(state, action) {
+function reducer(state, action) {
   switch (action.type) {
     case 'CREATE':
       return [action.data, ...state];
@@ -40,25 +39,21 @@ function hyejo(state, action) {
   }
 }
 
+/** context는 보통 컴포넌트 외부에 선언하게 됨,
+ * 왜냐면 App 컴포넌트 안쪽에서 context객체를 생성하게 되면, App 컴포넌트가 리랜더링 될때마다
+ * 새로운 Context를 계속해서 생성하기 때문이다.
+ *
+ * ✅ Context안에 Provider 프로퍼티만 제대로 알아두면 된다
+ * Provider는 context가 제공할 데이터를 설정하거나, context 데이터를 공급받을 컴포넌트를 설정하기위해
+ * 사용하는 프로퍼티로, 사실 컴포넌트에 해당한다.
+ * 따라서 <TodoContext.Provier/> 로 랜더링 시켜줄수 있음
+ */
+export const TodoContext = createContext();
+
 const App = () => {
-  /**
-   * todo관리하는 데이터를 App컴포넌트 내부에 useState를 이용하여 만들었는데
-   * 이렇게 되면 todos, setTodos 함수는 App 컴포넌트 내부에서만 접근이 가능하다
-   * 그렇기 때문에 state를 관리하는 코드 또한 App컴포넌트 내부에서만 작성됐어야했다
-   * ===> 상태관리 코드가 너무 길어진다! 😥
-   * 컴포넌트의 주된 역할은 UI를 랜더링하는것인데, STATE 관리 코드가 많아지게되면 주객이 전도된것이다.
-   * UI를 랜더링하는 코드보다, 상태를 관리하는 코드들이 훨씬 더 복잡해지고 길어지기때문이다.
-   * 따라서 APP컴포넌트가 랜더링하는 UI요소가 무엇인지 한눈에 파악하기가 어려워 가독성이 떨어지게 되고 유지보수가 어려워짐
-   * 컴포넌트 외부에 상태관리 코드를 분리시키도록 도와주는 useReducer가 필요하다.
-   *
-   */
+  console.log(TodoContext);
 
-  /** 🧡 useReducer 이용하여 state 관리하기
-   *  배열안에 객체안이 들어가는 복잡한 구조들은 보통 reducer를 사용하며 관리하는게 일반적이고
-   *  간단한 상태만있다면 useState로 관리함
-   */
-  const [todos, dispatch] = useReducer(hyejo, mockData);
-
+  const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
   const onCreate = useCallback(content => {
@@ -80,9 +75,6 @@ const App = () => {
     });
   }, []);
 
-  /** 콜백함수를 그대로 생성해서 반환해주고 deps가 변경될때만 다시 생성하도록
-   * 최적화를 진행 ==> 함수를 메모이제이션
-   */
   const onDelete = useCallback(targetId => {
     dispatch({
       type: 'DELETE',
@@ -93,8 +85,20 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Editer onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      {/* Provider 안에있는 모든 컴포넌트들은 전부다 ToodoContext의 데이터를 공급받을 수 있다. 
+        공급받는 데이터는 Provider의 value속성값으로 전달해주면 된다.
+      */}
+      <TodoContext.Provider
+        value={{
+          todos,
+          onCreate,
+          onUpdate,
+          onDelete,
+        }}
+      >
+        <Editer />
+        <List />
+      </TodoContext.Provider>
     </div>
   );
 };
