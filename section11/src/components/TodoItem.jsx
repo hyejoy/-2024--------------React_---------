@@ -1,6 +1,6 @@
 import './TodoItem.css';
 import {memo, useCallback, useContext, useMemo} from 'react';
-import {TodoContext} from '../App';
+import {TodoDispatchContext} from '../App';
 import dayjs from 'dayjs';
 
 const TodoItem = ({id, isDone, content, date}) => {
@@ -8,7 +8,7 @@ const TodoItem = ({id, isDone, content, date}) => {
     return dayjs(date).format('YY년MM월DD일');
   }, [date]);
 
-  const {onUpdate, onDelete} = useContext(TodoContext);
+  const {onUpdate, onDelete} = useContext(TodoDispatchContext);
 
   return (
     <div className="TodoItem">

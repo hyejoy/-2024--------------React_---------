@@ -1,11 +1,11 @@
 import './List.css';
 import {useEffect, useState, useMemo, useContext} from 'react';
 import TodoItem from './TodoItem';
-import {TodoContext} from '../App';
+import {TodoStateContext} from '../App';
 
 const List = () => {
-  //  ⭐List는 todos만 사용하기때문에, 구조분해 할당 사용
-  const {todos} = useContext(TodoContext);
+  //  ⭐context로 넘어오는값은 객체가아니고 value자체가 넘어오기때문에 구조분해할당 사용하지않음
+  const todos = useContext(TodoStateContext);
 
   const [search, setSearch] = useState('');
 
