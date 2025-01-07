@@ -57,8 +57,8 @@ function reducer(state, action) {
  * 따라서 <TodoContext.Provier/> 로 랜더링 시켜줄수 있음
  */
 
-export const TodoStateContext = createContext(); //변화하는 context
-export const TodoDispatchContext = createContext(); //변화하지 않는 context
+export const TodoStateContext = createContext(); // ⭐변화하는 context
+export const TodoDispatchContext = createContext(); // ⭐변화하지 않는 context
 
 const App = () => {
   const [todos, dispatch] = useReducer(reducer, mockData);
@@ -90,7 +90,7 @@ const App = () => {
     });
   }, []);
 
-  // DispatchContext로 공급하는일은 어떤상황이든 변경되지않음
+  // ⭐ DispatchContext로 공급하는일은 어떤상황이든 변경되지않음
   const memoizedDispatch = useMemo(() => {
     return {onCreate, onUpdate, onDelete};
   }, []);
@@ -100,9 +100,8 @@ const App = () => {
       <Header />
       {/* Provider 안에있는 모든 컴포넌트들은 전부다 ToodoContext의 데이터를 공급받을 수 있다. 
         공급받는 데이터는 Provider의 value속성값으로 전달해주면 된다.
-      */}
-      {/* value={todos}는 객체를 담은게 아니라, 배열을 담았다 생각해야함
-      따라서 useContext(TodoStateContext) 으로 받는값은 구조분해할당으로 받지않아야한다. */}
+      ⭐ value={todos}는 객체를 담은게 아니라, 배열을 담았다 생각해야함
+        따라서 useContext(TodoStateContext) 으로 받는값은 구조분해할당으로 받지않아야한다. */}
       <TodoStateContext.Provider value={todos}>
         <TodoDispatchContext.Provider value={memoizedDispatch}>
           <Editer />
