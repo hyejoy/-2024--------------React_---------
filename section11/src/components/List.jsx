@@ -32,7 +32,7 @@ const List = () => {
    * 따라서, Todo 검색할때는 todos의 값이 바뀌지않기때문에 메모이제이션된 값을 보여준다.
    */
   const {totalCount, doneCount, notDoneCount} = useMemo(() => {
-    console.log('getAnalyzedData 호출💗');
+    console.log('getAnalyzedData 호출😎');
     const totalCount = todos.length;
     const doneCount = todos.filter(item => item.isDone).length;
 

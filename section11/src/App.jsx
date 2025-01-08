@@ -10,7 +10,7 @@ import {
 import Header from './components/Header';
 import Editer from './components/Editer';
 import List from './components/List';
-//TEWST
+
 const mockData = [
   {
     id: 0,
@@ -98,10 +98,11 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {/* Provider 안에있는 모든 컴포넌트들은 전부다 ToodoContext의 데이터를 공급받을 수 있다. 
-        공급받는 데이터는 Provider의 value속성값으로 전달해주면 된다.
-      ⭐ value={todos}는 객체를 담은게 아니라, 배열을 담았다 생각해야함
-        따라서 useContext(TodoStateContext) 으로 받는값은 구조분해할당으로 받지않아야한다. */}
+      {/* Provider 안에있는 모든 컴포넌트들은 전부다 해당 Context의 데이터를 공급받을 수 있다. 
+        ⭐ 공급받는 데이터는 Provider의 value속성값으로 전달해주면 된다.
+        ⭐ 참고 : value={todos}는 객체를 담은게 아니라, 배열을 담았다 생각해야함
+        따라서 useContext(TodoStateContext) 으로 받는값은 구조분해할당으로 받지않아야한다. => List 8번째줄 참고
+        */}
       <TodoStateContext.Provider value={todos}>
         <TodoDispatchContext.Provider value={memoizedDispatch}>
           <Editer />
