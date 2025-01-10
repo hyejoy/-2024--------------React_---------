@@ -42,7 +42,7 @@ const Editer = () => {
         onChange={onChangeContent}
         onKeyDown={onKeyDown}
         type="text"
-        placeholder="새로운 TO DO..."
+        placeholder="새로운 TO DO 입력"
       />
       <button onClick={onSubmit}>추가</button>
     </div>
