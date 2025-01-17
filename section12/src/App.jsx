@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Diary from './pages/Diary';
 import New from './pages/New';
 import NotFound from './pages/NotFound';
+//test
 
 /**
  *
