@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import useInput from "../hooks/useInput";
+import {useEffect} from 'react';
+import useInput from '../hooks/useInput';
 // 3가지 hook 관련 팁
 /**
  * 1. 함수 컴포넌트, 커스텀 훅 내부에서만 호출 가능
@@ -8,13 +8,13 @@ import useInput from "../hooks/useInput";
  *  */
 
 const HookExam = () => {
-  const [input, onChange] = useInput();
-  const [input2, onChange2] = useInput();
   /**
    * 각각의 컴포넌트마다 state를 생성하고,
    * 이벤트 핸들러를 생성하는 코드를 중복으로 매번 작성해줘야되는데
    * ====> 별도의 함수로 만들면 될것같은데🤔? -> custom hook 생성
    */
+  const [input, onChange] = useInput();
+  const [input2, onChange2] = useInput();
 
   useEffect(() => {
     console.log(input);
