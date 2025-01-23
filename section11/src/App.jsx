@@ -99,7 +99,6 @@ const App = () => {
    *  value로 { onCreate, onUpdate, onDelete }라는 객체를 생성해 전달한다. 따라서 매 렌더링마다 새로운 객체로 생성되기 때문에, 참조값이 매번 바뀌게 된다.
    * ⚠ onCreate, onUpdate, onDelete는 useCallback사용으로 참조값은 같지만, 객체를 담고있는 value의 값이 매 랜더링마다 새로운 객체로 생성됨
    * 따라서 React에서는 Context.Provider의 value가 같은 참조값을 유지하고 있을 때만 하위 컴포넌트를 리렌더링하지 않는다.
-   * 객체를 매번 새로 생성하면, 하위 컴포넌트들은 useContext를 통해 동일한 값을 받더라도 리렌더링된다.
    * 그렇기때문에 객체가 매번 새로 생성되지 않도록 메모이제이션해야 한다.
    * memo를 사용하면 value로 전달된 객체의 참조값이 유지되어 불필요한 리렌더링을 방지할 수 있다
    */
