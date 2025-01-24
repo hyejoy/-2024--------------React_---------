@@ -5,10 +5,6 @@ const Home = () => {
    * 예시 http://localhost:5173/?value=hello&name=hyejo
    */
   const [params, setParams] = useSearchParams();
-  console.log(params);
-  console.log(params.get('value'));
-  console.log(params.get('name'));
-
   return <div>home</div>;
 };
 
