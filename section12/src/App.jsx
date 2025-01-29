@@ -11,7 +11,7 @@ const mockData = [
   {
     id: 1,
     createDate: new Date('2025-01-28').getTime(),
-    emotionId: 1,
+    emotionId: 3,
     content: '1번 일기 내용',
   },
   {
@@ -23,7 +23,7 @@ const mockData = [
   {
     id: 3,
     createDate: new Date('2024-12-25').getTime(),
-    emotionId: 3,
+    emotionId: 1,
     content: '민재 생일!',
   },
 ];
