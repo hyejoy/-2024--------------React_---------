@@ -26,6 +26,12 @@ const mockData = [
     emotionId: 1,
     content: '민재 생일!',
   },
+  {
+    id: 4,
+    createDate: new Date('2024-01-30').getTime(),
+    emotionId: 1,
+    content: '여수 다녀온날 🐾',
+  },
 ];
 
 function reducer(state, action) {
