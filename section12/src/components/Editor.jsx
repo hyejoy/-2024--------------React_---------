@@ -1,6 +1,8 @@
 import './Editor.css';
 import EmotionItem from './EmotionItem';
 import Button from './Button';
+import {useReducer, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const emotionList = [
   {emotionId: 1, emotionName: '완전좋음'},
@@ -10,15 +12,69 @@ const emotionList = [
   {emotionId: 5, emotionName: '끔찍함'},
 ];
 
-const Editor = () => {
-  const emotionId = 2;
+const getStringDate = targetDate => {
+  console.log(targetDate);
+  // 날짜 YYYY-MM-DD
+  let year = targetDate.getFullYear();
+  let month = targetDate.getMonth() + 1;
+  let day = targetDate.getDate().toString();
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  if (day < 10) {
+    day = `0${day}`;
+  }
+
+  return `${year}-${month}-${day}`;
+};
+
+const Editor = ({onSubmit}) => {
+  const nav = useNavigate();
+  const [input, setInput] = useState({
+    createdDate: new Date(),
+    emotionId: 1,
+    content: '',
+  });
+
+  const onChangeInput = e => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    console.log(name);
+    console.log(value);
+
+    if (name === 'createdDate') {
+      value = new Date(value);
+      setInput({
+        ...input,
+        [name]: value,
+      });
+    }
+    // 날짜 외 설정
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const onClickSubmitButton = () => {
+    onSubmit(input);
+  };
+
   return (
     <div className="Editor">
       <section>
         <h4>오늘의 날짜</h4>
       </section>
       <section className="date_section">
-        <input type="date" />
+        <input
+          name="createdDate"
+          type="date"
+          value={getStringDate(input.createdDate)}
+          onChange={onChangeInput}
+        />
       </section>
       <section className="emotion_secton">
         <h4>오늘의 감정</h4>
@@ -28,18 +84,34 @@ const Editor = () => {
               key={item.emotionId}
               emotionId={item.emotionId}
               emotionName={item.emotionName}
-              isSelected={item.emotionId === emotionId}
+              isSelected={item.emotionId === input.emotionId}
+              onClick={() => {
+                onChangeInput({
+                  target: {
+                    name: 'emotionId',
+                    value: item.emotionId,
+                  },
+                });
+              }}
             />
           ))}
         </section>
       </section>
       <section className="content_section">
         <h4>오늘의 일기</h4>
-        <textarea placeholder="오늘은 어땠나요?" />
+        <textarea
+          placeholder="오늘은 어땠나요?"
+          name="content"
+          onChange={onChangeInput}
+        />
       </section>
       <section className="button_section">
-        <Button text={'취소하기'} />
-        <Button text={'작성완료'} type={'POSITIVE'} />
+        <Button text={'취소하기'} onClick={() => nav(-1)} />
+        <Button
+          text={'작성완료'}
+          type={'POSITIVE'}
+          onClick={onClickSubmitButton}
+        />
       </section>
     </div>
   );
