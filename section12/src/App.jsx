@@ -36,7 +36,13 @@ const mockData = [
     id: 5,
     createdDate: new Date('2025-02-01').getTime(),
     emotionId: 1,
-    content: '밍쿠리 만난날 ❤❤❤ 너무 즐거웟어요!',
+    content: '민재랑 데이트한날 😳',
+  },
+  {
+    id: 6,
+    createdDate: new Date('2025-02-04').getTime(),
+    emotionId: 2,
+    content: 'Outsystems Log 개발 80% 완료!',
   },
 ];
 
