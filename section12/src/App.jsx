@@ -36,7 +36,7 @@ const mockData = [
     id: 5,
     createdDate: new Date('2025-02-01').getTime(),
     emotionId: 1,
-    content: '민재랑 데이트한날 😳',
+    content: '토요일',
   },
   {
     id: 6,
