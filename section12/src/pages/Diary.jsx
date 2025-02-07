@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import {useParams, useNavigate} from 'react-router-dom';
 import {getEmotionImage} from '../util/get-emotion-image.js';
+import {formatedDate} from '../util/get-format-date.js';
 import {useContext, useEffect, useState} from 'react';
 import {DiaryStateContext} from '../App.jsx';
 
@@ -31,9 +32,25 @@ const Diary = () => {
   return (
     <div>
       <Header
-        title={' yyyy mm dd'}
-        leftChild={<Button text={'< 뒤로가기'} />}
-        rightChild={<Button text={'수정하기'} />}
+        title={formatedDate(
+          new Date(todayDiary?.createdDate).toLocaleDateString(),
+        )}
+        leftChild={
+          <Button
+            text={'< 뒤로가기'}
+            onClick={() => {
+              nav(-1);
+            }}
+          />
+        }
+        rightChild={
+          <Button
+            text={'수정하기'}
+            onClick={() => {
+              nav(`/Edit/${params.id}`);
+            }}
+          />
+        }
       />
       <h4>오늘의 일기</h4>
       <section>
