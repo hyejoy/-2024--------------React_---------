@@ -1,10 +1,9 @@
 import Header from '../components/Header';
 import Button from '../components/Button';
+import Viewer from '../components/Viewer';
 import {useParams, useNavigate} from 'react-router-dom';
-import {getEmotionImage} from '../util/get-emotion-image.js';
 import {formatedDate} from '../util/get-format-date.js';
-import {useContext, useEffect, useState} from 'react';
-import {DiaryStateContext} from '../App.jsx';
+import useDiary from '../hooks/useDiary.jsx';
 
 const Diary = () => {
   /** url의 파라미터의 값을 가져오는 custom hook
@@ -12,29 +11,19 @@ const Diary = () => {
    */
   const params = useParams();
   const nav = useNavigate();
-  const data = useContext(DiaryStateContext);
-  const [todayDiary, setTodayDiary] = useState();
+  const curDiaryItem = useDiary(params.id);
 
-  useEffect(() => {
-    const currentDiaryItem = data.find(
-      item => String(item.id) === String(params.id),
-    );
-
-    console.log('diary Object ', currentDiaryItem);
-
-    if (!currentDiaryItem) {
-      window.alert('존재하지 않는 일기입니다.');
-      nav('/', {replace: true});
-    }
-    setTodayDiary(currentDiaryItem);
-  }, [params.id]);
+  if (!curDiaryItem) {
+    return <div>데이터 로딩중..~</div>;
+  }
+  // useEffect의 첫번째 반환값이 undefined이므로 반환이 제대로 됏을때
+  // 구조분해 할당으로 데이터 할당하기
+  const {createdDate, emotionId, content} = curDiaryItem;
 
   return (
     <div>
       <Header
-        title={formatedDate(
-          new Date(todayDiary?.createdDate).toLocaleDateString(),
-        )}
+        title={formatedDate(new Date(createdDate).toLocaleDateString())}
         leftChild={
           <Button
             text={'< 뒤로가기'}
@@ -52,14 +41,7 @@ const Diary = () => {
           />
         }
       />
-      <h4>오늘의 일기</h4>
-      <section>
-        <img src={getEmotionImage(todayDiary?.emotionId)} />
-      </section>
-      <h4>오늘의 일기 내용</h4>
-      <section>
-        <div>{todayDiary?.content}</div>
-      </section>
+      <Viewer emotionId={emotionId} content={content} />
     </div>
   );
 };
