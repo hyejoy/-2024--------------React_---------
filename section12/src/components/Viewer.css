@@ -51,8 +51,14 @@
 .Viewer .content_wrapper {
   background-color: rgb(236, 236, 236);
   border-radius: 5px;
+  /*영어 단어는 줄바꿈하지 않고 유지하며,
+   한국어 및 한자 등의 글자는 자동 줄바꿈 허용*/
   word-break: keep-all;
+  /*너무 긴 단어(띄어쓰기가 없는 문자열)가 
+  컨테이너를 넘칠 경우 강제로 줄바꿈 처리*/
   overflow-wrap: break-word;
+  /*기본적으로 영어 단어는 유지되지만, 
+  컨테이너를 넘치는 경우 강제 줄바꿈됨.*/
 }
 
 .Viewer .content_wrapper > p {
