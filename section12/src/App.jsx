@@ -11,6 +11,7 @@ function reducer(state, action) {
   let nextState;
   switch (action.type) {
     case 'INIT': {
+      //INIT일때는 storage getItem으로 data를 가져오므로 해당 데이터 바로 return
       return action.data;
     }
     case 'CREATE': {
