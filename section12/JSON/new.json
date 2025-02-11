@@ -30,7 +30,7 @@
             "Category": "파츠수리"
         },
         "PlanDetail": {
-            "Id": 86,
+            "Id": 999999,
             "CreateDate": "2025-01-23T08:15:31Z",
             "TeamName": "",
             "SalesCategoryId": 2,
@@ -47,7 +47,7 @@
             "OrderAccuracyId": 0,
             "SalesChange": 0,
             "IsReflect": false,
-            "AgendaName": "",
+            "AgendaName": "Change SVP Connections Terminal_chj",
             "ClientID": 6,
             "FabLine": "",
             "DeviceID": 0,
@@ -170,7 +170,7 @@
             "Services": 0,
             "GrossProfitFee": 0,
             "IsConfirm": false,
-            "Note": ""
+            "Note": "비고 내용"
         }
     },
     {
@@ -482,7 +482,7 @@
             "OrderAccuracyId": 0,
             "SalesChange": 0,
             "IsReflect": false,
-            "AgendaName": "",
+            "AgendaName": "최혜조",
             "ClientID": 6,
             "FabLine": "",
             "DeviceID": 0,

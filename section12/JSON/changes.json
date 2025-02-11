@@ -1,0 +1,62 @@
+        {
+            "Clients": {
+                "Id": 7,
+                "Name": "SK hynix",
+                "Code": "2",
+                "ClientsCategoryId": 1
+            },
+            "InventoryCategory": {
+                "Id": 1,
+                "Label": "수리",
+                "Order": 3,
+                "Is_Active": true
+            },
+            "SalesCategory": {
+                "Id": 2,
+                "Label": "파츠",
+                "Order": 3,
+                "Is_Active": true,
+                "Category": "파츠수리"
+            },
+            "Performance": {
+                "Id": 134,
+                "CreateDate": "2025-02-06T06:40:39Z",
+                "TeamName": "Post Sales Team",
+                "SalesCategoryId": 2,
+                "ProductsId": 5,
+                "PublishDate": "2024-12-23T15:00:00Z",
+                "Year": 2025,
+                "Month": 11,
+                "AgendaName": "테스트1",
+                "PartCode": "6J4D0871",
+                "PartName": "BASE",
+                "Standards": "A5052P",
+                "Quantity": 100,
+                "UnitCost": 53923,
+                "TotalCost": 215690,
+                "UnitSales": 64119.00000000,
+                "TotalRevenue": 256476,
+                "ClientsCategoryID": 1,
+                "ClientID": 7,
+                "MemberName": "정소라",
+                "PONo_Vendor": "",
+                "DeviceID": 0,
+                "jebun": "0",
+                "Note": "Spin chuck OH 현지화 매출/6A614960",
+                "PONo": "",
+                "IVNo": "상품용역원가 대체",
+                "ProfitMargin": 0,
+                "Profit": 40786,
+                "IncomeStatement": 0,
+                "POTotal": 0,
+                "ForeignCurrency": 0,
+                "Inventory": 42,
+                "InventoryCategoryId": 1
+            },
+            "ClientsCategory": {
+                "Id": 1,
+                "Label": "SK hynix",
+                "Order": 2,
+                "Is_Active": true
+            }
+        },
