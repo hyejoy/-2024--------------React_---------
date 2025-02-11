@@ -4,6 +4,7 @@ import Viewer from '../components/Viewer';
 import {useParams, useNavigate} from 'react-router-dom';
 import {formatedDate} from '../util/get-format-date.js';
 import useDiary from '../hooks/useDiary.jsx';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Diary = () => {
   /** url의 파라미터의 값을 가져오는 custom hook
@@ -12,6 +13,8 @@ const Diary = () => {
   const params = useParams();
   const nav = useNavigate();
   const curDiaryItem = useDiary(params.id);
+
+  usePageTitle(`${params.id}번 일기`);
 
   if (!curDiaryItem) {
     return <div>데이터 로딩중..~</div>;

@@ -3,6 +3,7 @@ import Button from '../components/Button';
 import DiaryList from '../components/Diarylist';
 import {useState, useContext} from 'react';
 import {DiaryStateContext} from '../App';
+import usePageTitle from '../hooks/usePageTitle';
 
 const getMonthlyData = (pivotDate, data) => {
   // 해당년도 월의 1일 0시 0분 0초 가장 첫번째 시작하는 시간
@@ -41,6 +42,8 @@ const Home = () => {
   const onDecreseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
   };
+
+  usePageTitle('감정 일기장');
 
   return (
     <div>
