@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Button from '../components/Button';
-import DiaryList from '../components/Diarylist';
+import DiaryList from '../components/DiaryList';
 import {useState, useContext} from 'react';
 import {DiaryStateContext} from '../App';
 import usePageTitle from '../hooks/usePageTitle';
