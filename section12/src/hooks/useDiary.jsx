@@ -19,7 +19,7 @@ const useDiary = id => {
 
     /**
      * useEffect가 실행되고 나서야 값이 저장되는데
-     * useEffect는 컴포넌트가 랜더링된 이후에만 실행되기 때문에
+     * ⭐⭐useEffect는 컴포넌트가 랜더링된 이후에만 실행되기 때문에
      * 최초로 호출되었을때는 undefined가 반환됨
      */
     setCurDiary(currentDiaryItem);
