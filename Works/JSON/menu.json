@@ -1,0 +1,329 @@
+[
+    {
+        "MainId": 19,
+        "ScreenName": "Dashboard",
+        "MainName": "대시보드",
+        "DisplayOrder": 1,
+        "MidStructure": []
+    },
+    {
+        "MainId": 20,
+        "MainName": "매출목표",
+        "DisplayOrder": 2,
+        "MidStructure": [
+            {
+                "MiddleId": 28,
+                "ScreenName": "RevenueGoalOfModification",
+                "MiddleName": "개조",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 96,
+                "ScreenName": "RevenueGoalOfRelocation",
+                "MiddleName": "이설",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 97,
+                "ScreenName": "RevenueGoalOfPart",
+                "MiddleName": "파츠",
+                "DisplayOrder": 3,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 98,
+                "ScreenName": "RevenueGoalOfRepair",
+                "MiddleName": "수리",
+                "DisplayOrder": 4,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 99,
+                "ScreenName": "RevenueGoalOfOnCall",
+                "MiddleName": "온콜",
+                "DisplayOrder": 5,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 29,
+                "ScreenName": "ViewRevenueGoal",
+                "MiddleName": "매출목표 조회",
+                "DisplayOrder": 6,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 21,
+        "MainName": "매출계획",
+        "DisplayOrder": 3,
+        "MidStructure": [
+            {
+                "MiddleId": 30,
+                "ScreenName": "Modification",
+                "MiddleName": "개조",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 84,
+                "ScreenName": "Relocation",
+                "MiddleName": "이설",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 80,
+                "ScreenName": "Parts",
+                "MiddleName": "파츠",
+                "DisplayOrder": 3,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 85,
+                "ScreenName": "Repair",
+                "MiddleName": "수리",
+                "DisplayOrder": 4,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 81,
+                "ScreenName": "OnCall",
+                "MiddleName": "온콜",
+                "DisplayOrder": 5,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 87,
+                "ScreenName": "AllSalesPlan",
+                "MiddleName": "전체",
+                "DisplayOrder": 6,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 41,
+        "MainName": "실적관리",
+        "DisplayOrder": 4,
+        "MidStructure": [
+            {
+                "MiddleId": 100,
+                "ScreenName": "DetailedSales",
+                "MiddleName": "세부매출내역",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 101,
+                "ScreenName": "RemodelingRelocationStatus",
+                "MiddleName": "개조이설 status",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 24,
+        "MainName": "매출보고",
+        "DisplayOrder": 5,
+        "MidStructure": [
+            {
+                "MiddleId": 90,
+                "ScreenName": "Forecast",
+                "MiddleName": "FY별",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 91,
+                "ScreenName": "Sales",
+                "MiddleName": "매출",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 92,
+                "ScreenName": "CompareSale",
+                "MiddleName": "매출 비교",
+                "DisplayOrder": 3,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 93,
+                "ScreenName": "SalesActivities",
+                "MiddleName": "영업 활동",
+                "DisplayOrder": 4,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 94,
+                "ScreenName": "Order",
+                "MiddleName": "수주",
+                "DisplayOrder": 5,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 25,
+        "MainName": "재고관리",
+        "DisplayOrder": 6,
+        "MidStructure": [
+            {
+                "MiddleId": 36,
+                "ScreenName": "ExcelUploadStock",
+                "MiddleName": "엑셀업로드",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 35,
+                "ScreenName": "ViewStock",
+                "MiddleName": "재고관리 조회",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 26,
+        "MainName": "기초정보관리",
+        "DisplayOrder": 7,
+        "MidStructure": [
+            {
+                "MiddleId": 42,
+                "ScreenName": "TeamsCategory",
+                "MiddleName": "Group 관리",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 37,
+                "ScreenName": "Teams",
+                "MiddleName": "부서 구분 관리",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 38,
+                "ScreenName": "Members",
+                "MiddleName": "담당자 관리",
+                "DisplayOrder": 3,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 39,
+                "ScreenName": "Products",
+                "MiddleName": "품목 관리",
+                "DisplayOrder": 4,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 40,
+                "ScreenName": "Device",
+                "MiddleName": "기종 관리",
+                "DisplayOrder": 5,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 41,
+                "ScreenName": "Clients",
+                "MiddleName": "고객 관리",
+                "DisplayOrder": 6,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 27,
+        "MainName": "시스템관리",
+        "DisplayOrder": 8,
+        "MidStructure": [
+            {
+                "MiddleId": 43,
+                "ScreenName": "User",
+                "MiddleName": "사용자 관리",
+                "DisplayOrder": 1,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 44,
+                "ScreenName": "AccessLog",
+                "MiddleName": "접속로그",
+                "DisplayOrder": 2,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 45,
+                "ScreenName": "ViewEditHistory",
+                "MiddleName": "수정이력조회",
+                "DisplayOrder": 3,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 46,
+                "ScreenName": "MenuSetting",
+                "MiddleName": "메뉴설정",
+                "DisplayOrder": 4,
+                "SubStructure": []
+            },
+            {
+                "MiddleId": 79,
+                "ScreenName": "IndependentScreen",
+                "MiddleName": "기타메뉴 설정",
+                "DisplayOrder": 5,
+                "SubStructure": []
+            }
+        ]
+    },
+    {
+        "MainId": 48,
+        "MainName": "메인",
+        "DisplayOrder": 9,
+        "MidStructure": [
+            {
+                "MiddleId": 110,
+                "MiddleName": "미들",
+                "DisplayOrder": 1,
+                "SubStructure": [
+                    {
+                        "SubName": "서브1",
+                        "DisplayOrder": 1,
+                        "SubId": 44,
+                        "Sub2Structure": [
+                            {
+                                "ScreenName": "newScreen",
+                                "Sub2Name": "4뎁스서브1",
+                                "DisplayOrder": 1,
+                                "Sub2Id": 19
+                            },
+                            {
+                                "ScreenName": "TEST1",
+                                "Sub2Name": "4뎁스서브2",
+                                "DisplayOrder": 2,
+                                "Sub2Id": 20
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "MiddleId": 113,
+                "MiddleName": "미들2",
+                "DisplayOrder": 2,
+                "SubStructure": [
+                    {
+                        "ScreenName": "서브3뎁스",
+                        "SubName": "서브3뎁스",
+                        "DisplayOrder": 1,
+                        "SubId": 47,
+                        "Sub2Structure": []
+                    }
+                ]
+            }
+        ]
+    }
+]
