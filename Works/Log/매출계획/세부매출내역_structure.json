@@ -1,0 +1,74 @@
+{
+    "Clients": {
+        "Id": 6,
+        "Name": "SAMSUNG",
+        "BusinessName": "",
+        "Code": "",
+        "ClientsCategoryId": 2
+    },
+    "InventoryCategory": {
+        "Id": 0,
+        "Label": "",
+        "Order": 0,
+        "Is_Active": false
+    },
+    "SalesCategory": {
+        "Id": 4,
+        "Label": "개조",
+        "Order": 1,
+        "Is_Active": true,
+        "Category": "개조이설"
+    },
+    "DetailedSales": {
+        "Id": 1347,
+        "CreateDate": "2025-02-25T05:41:39Z",
+        "TeamName": "Cleaning1",
+        "SalesCategoryId": 4,
+        "ProductsId": 2,
+        "PublishDate": "2025-01-17",
+        "AgendaName": "SU3200  Chamber Wafer Life Count",
+        "PartCode": "SEC1T24072A",
+        "PartName": "SU3200(1117A/3)Mod/LifeCount",
+        "Standards": "ChamberWafer",
+        "Quantity": 1,
+        "UnitCost": 8079319,
+        "TotalCost": 8079319,
+        "UnitSales": 10000000,
+        "TotalRevenue": 10000000,
+        "ClientsCategoryID": 2,
+        "ClientID": 6,
+        "MemberName": "이장호",
+        "PONo_Vendor": "",
+        "DeviceID": 1,
+        "jebun": "530N01117A,530N01379A,530N01611A,530N02048A",
+        "Note": "선수금 매출대체",
+        "PONo": "",
+        "IVNo": "K-1BW-KB0155",
+        "ProfitMargin": 19,
+        "Profit": 1920681,
+        "IncomeStatement": 0,
+        "POTotal": 10000000,
+        "ForeignCurrency": 0,
+        "Inventory": 0,
+        "InventoryCategoryId": 0,
+        "MonthOrder": 10,
+        "BuyerCategoryId": 2,
+        "ItemCategory": "",
+        "PriceAdjustment": 0,
+        "IsConfirm": false
+    },
+    "Products": {
+        "Id": 2,
+        "Name": "상품"
+    },
+    "Device": {
+        "Id": 1,
+        "Name": "SU-3200"
+    },
+    "ClientsCategory": {
+        "Id": 2,
+        "Label": "SAMSUNG",
+        "Order": 1,
+        "Is_Active": true
+    }
+}

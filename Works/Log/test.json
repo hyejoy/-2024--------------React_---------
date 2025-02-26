@@ -1,0 +1,74 @@
+{
+    "Clients": {
+        "Id": "",
+        "Name": "거래처",
+        "Code": "",
+        "ClientsCategoryId": ""
+    },
+    "InventoryCategory": {
+        "Id": "",
+        "Label": "재고 카테고리",
+        "Order": "",
+        "Is_Active": ""
+    },
+    "SalesCategory": {
+        "Id": "",
+        "Label": "매출구분",
+        "Order": "",
+        "Is_Active": "",
+        "Category": ""
+    },
+    "DetailedSales": {
+        "Id": "",
+        "CreateDate": "작성일",
+        "TeamName": "부서구분",
+        "SalesCategoryId": "",
+        "ProductsId": "",
+        "PublishDate": "발행일",
+        "Year": "연도",
+        "Month": "월",
+        "AgendaName": "",
+        "PartCode": "PartCode",
+        "PartName": "PartName",
+        "Standards": "규격",
+        "Quantity": "수량",
+        "UnitCost": "단가(원가)",
+        "TotalCost": "원가 총 금액",
+        "UnitSales": "단가(매출)",
+        "TotalRevenue": "매출 총 금액",
+        "ClientsCategoryID": "",
+        "ClientID": "",
+        "MemberName": "담당자",
+        "PONo_Vendor": "업체 PO No",
+        "DeviceID": "",
+        "jebun": "제번",
+        "Note": "비고(변경 이력)",
+        "PONo": "PO No",
+        "IVNo": "IV No",
+        "ProfitMargin": "이익률",
+        "Profit": "이익",
+        "IncomeStatement": "선수계산서",
+        "POTotal": "PO총액",
+        "ForeignCurrency": "외화",
+        "Inventory": "재고",
+        "InventoryCategoryId": "",
+        "MonthOrder": "",
+        "BuyerCategoryId": "",
+        "ItemCategory": "",
+        "PriceAdjustment": "이전가격 조정금액"
+    },
+    "Products": {
+        "Id": "",
+        "Name": "품목명"
+    },
+    "Device": {
+        "Id": "",
+        "Name": "기종"
+    },
+    "ClientsCategory": {
+        "Id": "",
+        "Label": "고객 구분",
+        "Order": "",
+        "Is_Active": ""
+    }
+}
